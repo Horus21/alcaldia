@@ -979,39 +979,37 @@
 <body class="background-image">
 
 
-    @if (Route::has('login'))
-        <div class="overlay flex items-center justify-center h-screen">
-            <div class="bg-white bg-opacity-75 shadow-xl rounded-lg p-8 md:p-20 max-w-lg md:max-w-2xl text-center">
-                <h1 class="text-4xl font-bold text-gray-800 mb-6">Bienvenido al Sistema de Gestión de Empleados</h1>
-                <p class="text-gray-600 mb-8">
-                    Gestiona fácilmente la información de tus empleados con nuestra plataforma intuitiva y segura.
-                </p>
+    <div class="overlay flex items-center justify-center h-screen">
+        <div class="bg-white bg-opacity-75 shadow-xl rounded-lg p-8 md:p-20 max-w-lg md:max-w-2xl text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-6">Bienvenido al Sistema de Gestión de Empleados</h1>
+            <p class="text-gray-600 mb-8">
+                Gestiona fácilmente la información de tus empleados con nuestra plataforma intuitiva y segura.
+            </p>
+            @if (Route::has('login'))
                 <div class="flex justify-center space-x-4">
-                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                        @auth
-                        <p class="text-gray-600 mb-8">
-                            Ya estas logueado.
-                        </p>
+
+                    @auth
+                        <a href="{{ route('dashboard') }}"
+                            class="px-6 py-3 bg-green-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out">
+                            Dashboard
+                        </a>
+                    @else
+                        @if (Route::has('register'))
                             <a href="{{ route('login') }}"
                                 class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                                Dashboard
+                                Iniciar Sesión
                             </a>
-                        @else
-
-                        <a href="{{ route('login') }}" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                            Iniciar Sesión
-                        </a>
-                            @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="px-6 py-3 bg-green-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out">
+                            <a href="{{ route('register') }}"
+                                class="px-6 py-3 bg-green-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out">
                                 Registrarse
                             </a>
-                            @endif
-                        @endauth
-                    </div>
+                        @endif
+                    @endauth
                 </div>
-            </div>
+            @endif
+
         </div>
-    @endif
+    </div>
 </body>
 
 </html>
