@@ -1,6 +1,6 @@
 ## Download
 
-Git pull [url](https://github.com/Horus21/alcaldia.git)
+Git pull https://github.com/Horus21/prueba_alcaldia.git
 
 ## Install 
 
@@ -32,6 +32,8 @@ despues de levantado el proyecto e instalado los requistos para su funcionamient
 se desarrollo con blade como motor de plantillas 
 
 el proyecto cuenta con edicion para el perfil para cambiar nombre y correo ademas de la contraseña y poder eliminar la cuenta, se puede administrar los usuarios desde la opcion empleado o employees y se puede modificar el departamento desde departments adicional se puede eliminar todos los usuarios que se encuentren ligados a ese departamento la base de datos hay que realizar la migracion con el comando php artisan migrate  
+
+la aplicacion cuenta con soporte multilenguaje si se quiere activar se debe ir al archivo app.php que se encuentra en la carpeta congi y buscar hasta encontrar locale y cambiar 'en' por 'es' para las traducciones de los textos que esten en ingles 
 
 Este proyecto se desarrollo con laravel 10 
 
