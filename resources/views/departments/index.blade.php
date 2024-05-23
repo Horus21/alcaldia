@@ -28,7 +28,7 @@
                         <div class="container mx-auto mt-5">
                             <h1 class="text-2xl font-bold mb-5">Empleados en el Departamento de: {{ $departmentName }}
                             </h1>
-                            @dump($idUser)
+
                             @if ($employees->count() > 0)
                                 <div class="flex justify-between">
                                     <div class=" p-4">
