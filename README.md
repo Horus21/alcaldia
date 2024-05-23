@@ -1,6 +1,6 @@
 ## Download
 
-Git pull url
+Git pull [url](https://github.com/Horus21/alcaldia.git)
 
 ## Install 
 
