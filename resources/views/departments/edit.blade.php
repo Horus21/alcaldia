@@ -3,7 +3,7 @@
         <div class="flex justify-between">
             <div class="bg-blue-200 p-4 mr-4">
                 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    {{ __('Edit employees') }}
+                    {{ __('Edit Department') }}
                 </h2>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <!-- Contenido de la CARD -->
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form method="POST" action="{{ route('employees.update', $employee) }}" >
+                    <form method="POST" action="{{ route('departments.update', $employee->id) }}" >
                         @method('PUT')
                         @csrf
                         <div>
@@ -22,12 +22,15 @@
                                 :value="old('name')" required autofocus autocomplete="off" />
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
+
+                        <!-- Departamento -->
                         <div class="mt-4">
-                            <x-input-label for="email" :value="__('Email')" />
-                            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                            <x-input-label :value="__('Department')" />
+                            <x-text-input-select id="departamento" class="block mt-1 w-full" name="departamento"
                                 required autocomplete="off" />
                             <x-input-error :messages="$errors->get('emanpm ruil')" class="mt-2" />
                         </div>
+
                         <div class="flex items-center justify-end mt-4">
                             <x-primary-button class="ms-4" type="submit">
                                 {{ __('Update') }}
@@ -40,4 +43,18 @@
 
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/departamentos')
+                .then(response => response.json())
+                .then(data => {
+                    const departamentoSelect = document.getElementById('departamento');
+                    data.forEach(departamento => {
+                        let option = document.createElement('option');
+                        option.text = departamento.name;
+                        departamentoSelect.appendChild(option);
+                    });
+                });
+        });
+    </script>
 </x-app-layout>

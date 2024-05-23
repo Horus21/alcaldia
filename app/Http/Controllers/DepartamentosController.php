@@ -73,17 +73,22 @@ class DepartamentosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Departamentos $departamentos)
+    public function edit(User $user)
     {
-        //
+        return view('departments.edit', ['employee' => $user]);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Departamentos $departamentos)
+    public function update(Request $request, User $user)
     {
-        //
+        $validate = $request -> validate([
+            'departamento'=> ['required','string','max:255'],
+        ]);
+       $user->update($validate);
+       return to_route('employees.index')->with('success', 'Empleado actualizado');
     }
 
     /**

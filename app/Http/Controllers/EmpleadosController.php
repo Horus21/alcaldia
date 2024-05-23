@@ -90,7 +90,7 @@ class EmpleadosController extends Controller
     {
         $validate = $request -> validate([
             'name'=> ['required','string','max:255'],
-            'departamento'=> ['required','string','max:255'],
+            'email'=> ['required','string','max:255'],
         ]);
        $user->update($validate);
        return to_route('employees.index')->with('success', 'Empleado actualizado');
