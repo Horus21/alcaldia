@@ -26,12 +26,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <a href="{{ route('employees.create') }}"class=" mb-4 flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                  </svg>
-                                Crear usuario
-                            </a>
+
                             @if ($total != 0)
 
                                 <x-table :employees="$employees" class="justify-center relative" />

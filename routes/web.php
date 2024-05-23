@@ -20,9 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/employees', function () {
-    return view('employees');
-})->middleware(['auth', 'verified'])->name('employees');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     // Rutas perfil
@@ -35,8 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/employees/{user}/edit', [EmpleadosController::class, 'edit'])->name('employees.edit');
     Route::put('/employees/{user}', [EmpleadosController::class, 'update'])->name('employees.update');
     Route::delete('/employees/{user}', [EmpleadosController::class, 'destroy'])->name('employees.destroy');
-    Route::get('/employees/create', [EmpleadosController::class, 'create'])->name('employees.create');
-    Route::get('/employees', [EmpleadosController::class, 'store'])->name('employees.store');
 
     //rutas departamentos
     Route::get('/departments', [DepartamentosController::class, 'index'])->name('departments.index');
