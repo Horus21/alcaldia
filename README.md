@@ -7,6 +7,7 @@ Git pull [url](https://github.com/Horus21/alcaldia.git)
 - composer i o composer update
 - npm i heroicons
 -  npm install -D tailwindcss npx tailwindcss init
+-  composer require laravel-lang/common --dev
 - php artisan lang:add es
 - composer require laravel-lang/common --dev
 - composer require laravel/breeze --dev
