@@ -90,7 +90,7 @@ class DepartamentosController extends Controller
             'departamento'=> ['required','string','max:255'],
         ]);
        $user->update($validate);
-       return to_route('departments.index')->with('success', 'Empleado actualizado');
+       return to_route('departments.index')->with('success', 'Departamento de Empleado actualizado');
     }
 
     /**

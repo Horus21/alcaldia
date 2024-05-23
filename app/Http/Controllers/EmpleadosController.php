@@ -93,7 +93,7 @@ class EmpleadosController extends Controller
             'email'=> ['required','string','max:255'],
         ]);
        $user->update($validate);
-       return to_route('employees.index')->with('success', 'Empleado actualizado');
+       return to_route('employees.index')->with('success', 'Empleado actualizado exitosamente');
     }
 
     /**
