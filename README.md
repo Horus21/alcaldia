@@ -1,6 +1,6 @@
 ## Download
 
-Git pull https://github.com/Horus21/alcaldia.git
+Git pull https://github.com/Horus21/prueba_alcaldia.git
 
 ## Install 
 
