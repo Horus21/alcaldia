@@ -23,3 +23,6 @@ Si tiene laragon puede inicializar eel proycto levantando el servidor de laragon
 o desde la terminar desde la carpeta del proyecto corriendo php artisan serve
 
 Este proyecto se desarrollo con laravel 10 
+
+## License
+The Laravel framework is open-sourced software licensed under the MIT license.
