@@ -13,15 +13,11 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <!-- Contenido de la CARD -->
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form method="POST" action="{{ route('departments.update', $employee->id) }}" >
+                    @dump($employee)
+                    <form method="POST" action="{{ route('departments.update', $employee) }}" >
                         @method('PUT')
                         @csrf
-                        <div>
-                            <x-input-label for="name" :value="__('Name')" />
-                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
-                                :value="old('name')" required autofocus autocomplete="off" />
-                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                        </div>
+
 
                         <!-- Departamento -->
                         <div class="mt-4">

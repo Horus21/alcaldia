@@ -28,6 +28,7 @@
                         <div class="container mx-auto mt-5">
                             <h1 class="text-2xl font-bold mb-5">Empleados en el Departamento de: {{ $departmentName }}
                             </h1>
+                            @dump($idUser)
                             @if ($employees->count() > 0)
                                 <div class="flex justify-between">
                                     <div class=" p-4">
@@ -75,7 +76,7 @@
                                                 <td class="px-6 py-4 whitespace-nowrap">{{ $employee->departamento }}
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     <div class=" p-4 mr-4">
-                                                        <a href="{{ route('departments.edit', $departmentName) }}">
+                                                        <a href="{{ route('departments.edit', $employee) }}">
                                                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
                                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                                 stroke="currentColor" class="size-6">

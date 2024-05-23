@@ -18,6 +18,8 @@ class DepartamentosController extends Controller
 
         // Construir la consulta inicial con todos los usuarios
         $query = User::query();
+        $idUser = User::select('id');
+
         $departamentos = User::select('departamento')
         ->distinct()
         ->pluck('departamento');
@@ -32,7 +34,7 @@ class DepartamentosController extends Controller
         $perPage = request()->input('perPage', 10); // Obtén el parámetro 'perPage' de la solicitud o usa un valor predeterminado (en este caso, 10)
 
         $employees = $query->paginate($perPage);
-        return view('departments.index', compact('employees', 'search', 'departmentName','departamentos'));
+        return view('departments.index', compact('employees', 'search', 'departmentName','departamentos', 'idUser'));
    }
 
    public function filterUsers(Request $request)
@@ -88,7 +90,7 @@ class DepartamentosController extends Controller
             'departamento'=> ['required','string','max:255'],
         ]);
        $user->update($validate);
-       return to_route('employees.index')->with('success', 'Empleado actualizado');
+       return to_route('departments.index')->with('success', 'Empleado actualizado');
     }
 
     /**

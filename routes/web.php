@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/departments/filter-users', [DepartamentosController::class, 'filterUsers'])->name('departments.filterUsers');
     Route::delete('/departments/{dpto}', [DepartamentosController::class, 'deleteUsers'])->name('departments.deleteUsers');
     Route::get('/departments/{user}/edit', [DepartamentosController::class, 'edit'])->name('departments.edit');
-    Route::put('/departments/{dpto}', [DepartamentosController::class, 'updatee'])->name('departments.update');
+    Route::put('/departments/{user}', [DepartamentosController::class, 'update'])->name('departments.update');
 
 });
 //ruta api para obtener los departamentos
