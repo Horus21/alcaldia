@@ -4,14 +4,18 @@ Git pull [url](https://github.com/Horus21/alcaldia.git)
 
 ## Install 
 
-composer i o composer update
-npm i heroicons
-php artisan lang:add es
-composer require laravel-lang/common --dev
-composer require laravel/breeze --dev
-composer require guzzlehttp/guzzle
-php artisan breeze:install blade --dark
-php artisan migrate
+- composer i o composer update
+- npm i heroicons
+-  npm install -D tailwindcss npx tailwindcss init
+- php artisan lang:add es
+- composer require laravel-lang/common --dev
+- composer require laravel/breeze --dev
+- composer require guzzlehttp/guzzle
+- composer require larave/ui
+- php artisan breeze:install blade --dark
+- php artisan make:seeder UserSeeder
+-  php artisan db:seed --class=UserSeeder
+- php artisan migrate
 
 
 Para compilar los estilos de tailwind npm run dev 
