@@ -61,6 +61,7 @@ class EmpleadosController extends Controller
     $user = new User();
     $user->name = $request->name;
     $user->email = $request->email;
+    $user->departamento = $request->departamento;
     $user->password = bcrypt($request->password);
     $user->save();
 
@@ -103,5 +104,14 @@ class EmpleadosController extends Controller
     {
         $user->delete();
         return to_route('employees.index')->with('success','Empleado Eliminado exitosamente');
+    }
+    public function indexChart()
+    {
+        // Obtener la información de los departamentos y la cantidad de usuarios por departamento
+        $departments = User::select('departamento', \DB::raw('count(*) as total'))
+            ->groupBy('departamento')
+            ->get();
+
+        return view('dashboard', compact('departments'));
     }
 }

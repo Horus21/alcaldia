@@ -34,7 +34,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/employees', [EmpleadosController::class, 'index'])->name('employees.index');
     Route::get('/employees/{user}/edit', [EmpleadosController::class, 'edit'])->name('employees.edit');
     Route::put('/employees/{user}', [EmpleadosController::class, 'update'])->name('employees.update');
+    Route::get('/employees/create', [EmpleadosController::class, 'create'])->name('employees.create');
     Route::delete('/employees/{user}', [EmpleadosController::class, 'destroy'])->name('employees.destroy');
+    Route::resource('employees', EmpleadosController::class);
+
 
     //rutas departamentos
     Route::get('/departments', [DepartamentosController::class, 'index'])->name('departments.index');
@@ -42,6 +45,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/departments/{dpto}', [DepartamentosController::class, 'deleteUsers'])->name('departments.deleteUsers');
     Route::get('/departments/{user}/edit', [DepartamentosController::class, 'edit'])->name('departments.edit');
     Route::put('/departments/{user}', [DepartamentosController::class, 'update'])->name('departments.update');
+
+    Route::get('/dashboard', [EmpleadosController::class, 'indexChart'])->name('dashboard');
+
 
 });
 //ruta api para obtener los departamentos

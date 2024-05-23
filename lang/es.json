@@ -266,7 +266,10 @@
     "email": "correo electrónico",
     "employees": "empleados",
     "Employees": "Empleados",
-    "employee": "empleado"
+    "employee": "empleado",
+    "Edit employees": "Editar empleado",
+    "Edit Department": "Editar Departamento",
+    "edited": "editado"
 
 
 }
