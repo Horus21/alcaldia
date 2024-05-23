@@ -997,15 +997,14 @@
                                 Dashboard
                             </a>
                         @else
-                            <a href="{{ route('login') }}"
-                                class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                                Iniciar Sesión
-                            </a>
+
+                        <a href="{{ route('login') }}" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+                            Iniciar Sesión
+                        </a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}"
-                                    class="px-6 py-3 bg-green-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out">
-                                    Registrarse
-                                </a>
+                            <a href="{{ route('register') }}" class="px-6 py-3 bg-green-600 text-white rounded-full font-semibold text-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out">
+                                Registrarse
+                            </a>
                             @endif
                         @endauth
                     </div>
